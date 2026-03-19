@@ -66,16 +66,18 @@ export default function ContactForm() {
         {errors.email && <span>{errors.email.message}</span>}
         {/* message */}
         <label htmlFor="message"> Message:</label>
-        <input
+        <textarea
           className="border"
           {...register("message")}
           id="message"
-          type="text"
           name="message"
           required
         />
         {errors.message && <span>{errors.message.message}</span>}
-        <button className="flex justify-center items-center p-2  bg-amber-200 rounded-lg" type="submit">
+        <button
+          className="flex justify-center items-center p-2  bg-amber-200 rounded-lg"
+          type="submit"
+        >
           {" "}
           Submit{" "}
         </button>
