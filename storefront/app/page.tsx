@@ -1,9 +1,9 @@
-import { SearchBar } from "@/components/ui/SearchBar"
+import { SearchBar } from "@/components/ui/SearchBar";
 import Link from "next/link";
 import { getProducts } from "./shop/page";
+import { Card } from "@/components/ui/card/Card";
 
-
-export default async function Home(){
+export default async function Home() {
   const products = await getProducts();
 
   return (
@@ -13,7 +13,7 @@ export default async function Home(){
         <Link href="/shop"> Shop </Link>
         <Link href="/contact"> Contact Us </Link>
         <SearchBar products={products} />
-     
+        <Card products={products} />
       </main>
     </div>
   );
