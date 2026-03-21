@@ -1,11 +1,16 @@
-import ProductsGrid from "@/components/ProductGrid";
 import { getProducts } from "@/services/api";
+import { ProductGrid } from "@/components/ProductGrid";
 
-export default async function Shop() {
-  const products = await getProducts();
-  return (
+export default async function ProductsPage() {
 
-    <ProductsGrid products={products} />
-    
-  );
-}
+    const products = await getProducts();
+
+    return (
+      <div className="">
+        <h1 className="text-2xl font-bold">Products</h1>
+        <ProductGrid products={products} />
+      </div>
+    )
+
+  
+  }

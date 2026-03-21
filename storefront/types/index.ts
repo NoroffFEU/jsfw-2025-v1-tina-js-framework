@@ -6,3 +6,15 @@ export type Products = {
   discountedPrice: number;
   quantity?: number;
 };
+
+export type Product = {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  discountedPrice: number;
+  image?: {
+    url?: string;
+    alt?: string;
+  };
+};
