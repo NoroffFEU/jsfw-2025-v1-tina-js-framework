@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import type { Products } from "@/types";
+import type { Product} from "@/schemas/productSchema";
 
-export function SearchBar({ products }: { products: Products[] }) {
+export function SearchBar({ products }: { products: Product[] }) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Products[]>([]);
+  const [results, setResults] = useState<Product[]>([]);
   const ref = useRef<HTMLDivElement>(null);
 
   // Debounced search, used claude. not right because setResult is called synchronously. Need to find a fix

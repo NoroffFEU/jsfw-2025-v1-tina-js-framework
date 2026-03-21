@@ -21,7 +21,7 @@
 //     </div>
 //   );
 // }
-import { Product } from "@/types/index"
+import { Product } from "@/schemas/productSchema"
 import { Card } from "@/components/ui/card/Card";
 
 export function ProductGrid({ products }: { products: Product[] }) {
