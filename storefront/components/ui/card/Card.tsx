@@ -1,7 +1,8 @@
 
 //link to product id
 import Image from "next/image";
-import { Product } from "@/schemas/productSchema";
+import { Product, SingleProductResponseSchema } from "@/schemas/productSchema";
+import Link from "next/link";
 
 export function Card({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
@@ -54,12 +55,14 @@ export function Card({ product }: { product: Product }) {
         </div>
 
         <div className="mt-4">
+          <Link href={`/`}>
           <button
-            aria-label={`Add ${product.title} to cart`}
+            aria-label={`View ${product.title} in details page`}
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded w-full"
-          >
+          > 
             View Product
           </button>
+          </Link>
         </div>
       </div>
     </div>
