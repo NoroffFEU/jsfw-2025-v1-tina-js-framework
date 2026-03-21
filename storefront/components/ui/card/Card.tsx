@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getProducts } from "@/app/shop/page";
+import { getProducts } from "@/services/api";
 
 export async function Card() {
   const products = await getProducts();
