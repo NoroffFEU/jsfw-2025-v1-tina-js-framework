@@ -7,10 +7,9 @@ import type { Products } from "@/types";
 export function SearchBar({ products }: { products: Products[] }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Products[]>([]);
-  //   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Debounced search, used claude
+  // Debounced search, used claude. not right because setResult is called synchronously. Need to find a fix
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
