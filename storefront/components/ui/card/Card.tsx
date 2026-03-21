@@ -1,7 +1,7 @@
 
 //link to product id
 import Image from "next/image";
-import { Product, SingleProductResponseSchema } from "@/schemas/productSchema";
+import { Product} from "@/schemas/productSchema";
 import Link from "next/link";
 
 export function Card({ product }: { product: Product }) {
@@ -55,7 +55,7 @@ export function Card({ product }: { product: Product }) {
         </div>
 
         <div className="mt-4">
-          <Link href={`/`}>
+          <Link href={`/product/${product.id}`}>
           <button
             aria-label={`View ${product.title} in details page`}
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded w-full"

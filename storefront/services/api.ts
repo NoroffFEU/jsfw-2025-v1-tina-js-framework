@@ -1,4 +1,4 @@
-import { ProductsResponseSchema } from "@/schemas/productSchema";
+import { ProductsResponseSchema, SingleProductResponseSchema } from "@/schemas/productSchema";
 import { z } from "zod";
 
 
@@ -18,6 +18,23 @@ export async function getProducts() {
   const data = await response.json();
 
   const parsed = ProductsResponseSchema.safeParse(data);
+
+  if (!parsed.success) {
+    const formattedError = z.treeifyError(parsed.error);
+    console.error(formattedError);
+    throw new Error("Invalid API response");
+  }
+
+  return parsed.data.data;
+}
+
+export async function getProduct(id:string) {
+  const response = await fetch(`${API_URL}/online-shop/${id}`);
+   if (!response.ok) {
+    throw new Error(`Failed to fetch products: ${response.statusText}`);
+  }
+  const data = await response.json();
+  const parsed = SingleProductResponseSchema.safeParse(data);
 
   if (!parsed.success) {
     const formattedError = z.treeifyError(parsed.error);
