@@ -7,7 +7,7 @@ import type { Products } from "@/types";
 export function SearchBar({ products }: { products: Products[] }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Products[]>([]);
-  const [open, setOpen] = useState(false);
+  //   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   // Debounced search, used claude
@@ -20,7 +20,7 @@ export function SearchBar({ products }: { products: Products[] }) {
     const timer = setTimeout(() => {
       const lower = query.toLowerCase();
       const filtered = products.filter((p) =>
-        p.title.toLowerCase().includes(lower)
+        p.title.toLowerCase().includes(lower),
       );
       setResults(filtered);
     }, 300);
@@ -28,32 +28,36 @@ export function SearchBar({ products }: { products: Products[] }) {
     return () => clearTimeout(timer);
   }, [query, products]);
 
-
   useEffect(() => {
-    setOpen(results.length > 0);
-  }, [results]);
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setResults([]);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const showDropdown = results.length > 0;
 
   return (
-    <div className="relative w-full max-w-md">
+    <div ref={ref} className="relative w-full max-w-md">
       <input
-      className="border"
+        className="border"
         type="text"
         placeholder="Search products..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
 
-      {open && (
+      {showDropdown && (
         <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-auto rounded-md border bg-background shadow-lg">
           {results.map((product) => (
             <li key={product.id}>
               <Link
-                href={`/shop/${product.id}`}
-                onClick={() => {
-                  setQuery("");
-                  setOpen(false);
-                }}
                 className="block px-3 py-2 text-sm hover:bg-muted"
+                href={`/shop/${product.id}`}
+                onClick={() => setQuery("")}
               >
                 {product.title}
               </Link>
