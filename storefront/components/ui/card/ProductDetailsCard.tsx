@@ -4,11 +4,7 @@ import ReviewSection from "@/components/product/Reviews";
 import TagsSection from "@/components/product/Tags";
 import RatingSection from "@/components/product/Rating";
 
-//structure intro different components
-//--cardheader (image and % discount)
-//--cardmain (tile, rating, description, tags)
-//--cardfooter (price and add to cart button)
-//--cardreviews section
+
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
