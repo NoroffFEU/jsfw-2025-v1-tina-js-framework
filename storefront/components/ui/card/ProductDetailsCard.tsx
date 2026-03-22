@@ -1,16 +1,15 @@
 import { Product } from "@/schemas/productSchema";
 import Image from "next/image";
-import ReviewSection from "@/components/reviews/Reviews";
+import ReviewSection from "@/components/product/Reviews";
+import TagsSection from "@/components/product/Tags";
 // card for product details should contain:
 
-// image
-// title
-// description
+
 // price
 // price discount
 // rating
 //tags need to be mapped out
-// reviews
+
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
@@ -33,9 +32,8 @@ export default function ProductDetailsCard({ product }: { product: Product }) {
         <p className="text-gray-700 text-base">
           {product.description}
         </p>
-        <div className="">
-            <span
-            className="inline-block bg-amber-100  px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{product.tags}</span></div>
+        <TagsSection tags={product.tags}/>
+            
         <div className="">
           {product.price}
           {product.discountedPrice}
