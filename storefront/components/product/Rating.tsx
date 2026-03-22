@@ -9,8 +9,8 @@ export default function RatingSection({ rating }: { rating: number }) {
     );
   }
 return (
-    <div className="text-sm">
-        Rated <span className=" text-md font-bold text-indigo-500">{rating}/5 </span>
+    <div className="text-md">
+        Rated <span className=" text-l font-bold text-indigo-500">{rating}/5 </span>
         by our customers
     </div>
 )
