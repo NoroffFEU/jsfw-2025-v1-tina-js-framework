@@ -1,9 +1,8 @@
-import { SearchBar } from "@/components/ui/SearchBar"
+import { SearchBar } from "@/components/ui/SearchBar";
 import Link from "next/link";
-import { getProducts } from "./shop/page";
+import { getProducts } from "@/services/api"; 
 
-
-export default async function Home(){
+export default async function Home() {
   const products = await getProducts();
 
   return (
@@ -13,7 +12,7 @@ export default async function Home(){
         <Link href="/shop"> Shop </Link>
         <Link href="/contact"> Contact Us </Link>
         <SearchBar products={products} />
-     
+      
       </main>
     </div>
   );
