@@ -12,7 +12,7 @@ export default async function ProductDetailPage({
 
   return (
 
-    <div className="bg-indigo-50 space-y-6">
+    <div className=" space-y-6">
       <ProductDetailsCard product={product} />
       
     </div>
