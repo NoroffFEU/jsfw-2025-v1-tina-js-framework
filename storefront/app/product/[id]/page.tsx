@@ -1,5 +1,6 @@
 import { getProduct } from "@/services/api";
 import ProductDetailsCard from "@/components/ui/card/ProductDetailsCard";
+import Footer from "@/components/layout/Footer";
 
 export default async function ProductDetailPage({
   params,
@@ -13,6 +14,8 @@ export default async function ProductDetailPage({
 
     <div className="bg-indigo-50 space-y-6">
       <ProductDetailsCard product={product} />
+       <Footer />
     </div>
+   
   );
 }
