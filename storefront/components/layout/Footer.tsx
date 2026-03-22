@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-indigo-900 mt-12 p-12">
+    <footer className=" bg-radial-[at_50%_75%] from-indigo-800 to-indigo-900 mt-12 p-12">
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8  justify-items-center ">
           <div className="">
