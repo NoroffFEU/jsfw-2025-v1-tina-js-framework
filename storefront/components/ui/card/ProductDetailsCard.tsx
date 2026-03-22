@@ -2,6 +2,7 @@ import { Product } from "@/schemas/productSchema";
 import Image from "next/image";
 import ReviewSection from "@/components/product/Reviews";
 import TagsSection from "@/components/product/Tags";
+import RatingSection from "@/components/product/Rating";
 // card for product details should contain:
 
 
@@ -28,7 +29,7 @@ export default function ProductDetailsCard({ product }: { product: Product }) {
        </div>
        <div className="px-6 py-4">
         <h2 className="font-bold text-xl mb-2">{product.title}</h2>
-        <div>{product.rating}</div>
+        <RatingSection rating={product.rating}/>
         <p className="text-gray-700 text-base">
           {product.description}
         </p>
