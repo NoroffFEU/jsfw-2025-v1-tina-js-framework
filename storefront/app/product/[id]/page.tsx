@@ -14,7 +14,7 @@ export default async function ProductDetailPage({
 
     <div className="bg-indigo-50 space-y-6">
       <ProductDetailsCard product={product} />
-       <Footer />
+      
     </div>
    
   );
