@@ -1,6 +1,6 @@
 import { getProduct } from "@/services/api";
 import ProductDetailsCard from "@/components/ui/card/ProductDetailsCard";
-import Footer from "@/components/layout/Footer";
+
 
 export default async function ProductDetailPage({
   params,
