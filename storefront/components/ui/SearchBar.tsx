@@ -55,7 +55,7 @@ export function SearchBar({ products }: { products: Product[] }) {
             <li key={product.id}>
               <Link
                 className="block px-3 py-2 text-sm hover:bg-muted"
-                href={`/shop/${product.id}`}
+                href={`/product/${product.id}`}
                 onClick={() => setQuery("")}
               >
                 {product.title}
