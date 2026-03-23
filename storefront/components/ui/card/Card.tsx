@@ -15,6 +15,7 @@ export function Card({ product }: { product: Product }) {
 
   return (
     <div className="bg-white-100  overflow-hidden shadow-sm hover:shadow-md transition ">
+          <Link href={`/product/${product.id}`}>
       <div className="relative w-full h-56 overflow-hidden">
         <Image
           className="object-cover"
@@ -24,7 +25,7 @@ export function Card({ product }: { product: Product }) {
         />
 
         {hasDiscount && (
-          <div className="absolute top-0 left-0 bg-amber-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
+          <div className="absolute top-0 left-0 bg-indigo-200 text-indigo-800 px-2 py-1 m-2  text-sm font-medium">
             -{discountPercent}%
           </div>
         )}
@@ -40,21 +41,22 @@ export function Card({ product }: { product: Product }) {
         <div className="flex gap-3 items-center">
           {hasDiscount ? (
             <>
-              <span className="font-bold text-lg line-through text-gray-500">
+              <span className="font-light text-md line-through text-indigo-300">
                 {(product.price)}
               </span>
-              <span className="font-bold text-lg text-red-500">
+              <span className="font-bold text-lg text-indigo-800">
                 {(product.discountedPrice)}
               </span>
             </>
           ) : (
-            <span className="font-bold text-lg">
+            <span className="font-bold text-lg text-indigo-800">
               {(product.price)}
             </span>
           )}
+          
         </div>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <Link href={`/product/${product.id}`}>
           <button
             aria-label={`View ${product.title} in details page`}
@@ -63,8 +65,9 @@ export function Card({ product }: { product: Product }) {
             View Product
           </button>
           </Link>
-        </div>
+        </div> */}
       </div>
+      </Link>
     </div>
   );
 }
