@@ -14,7 +14,7 @@ export function Card({ product }: { product: Product }) {
     : 0;
 
   return (
-    <div className="bg-indigo-100 rounded-md overflow-hidden shadow-sm hover:shadow-md transition">
+    <div className="bg-white-100  overflow-hidden shadow-sm hover:shadow-md transition ">
       <div className="relative w-full h-56 overflow-hidden">
         <Image
           className="object-cover"
