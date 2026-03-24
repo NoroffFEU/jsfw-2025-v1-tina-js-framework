@@ -1,5 +1,7 @@
 import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 
+// cartstorage
 // import { persist } from "zustand/middleware" 
 // save to localstorage so refresh doesnt clear cart
 import { CartItem } from "@/types";
@@ -15,7 +17,7 @@ interface CartStore {
   itemCount: () => number;
 }
 
-export const useCartStore = create<CartStore>()((set, get) => ({
+export const useCartStore = create<CartStore>()(persist((set, get) => ({
   items: [],
   addItem: (item) => {
     const existingItem = get().items.find(
@@ -63,6 +65,9 @@ export const useCartStore = create<CartStore>()((set, get) => ({
     ),
 
   itemCount: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
-}));
+  }), {
+name: 'cart-storage',
+storage: createJSONStorage(()=> localStorage),}));
+
 
 
