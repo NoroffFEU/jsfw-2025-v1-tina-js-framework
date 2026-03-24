@@ -1,35 +1,40 @@
-"use client"
+"use client";
 
 import { useCartStore } from "@/stores/cartStore";
-//useCartStore
+import { useRouter } from "next/navigation";
 
-// export default function CartSummary() {
-//   const total = useCartStore((state) => state.total());
-//   const itemCount = useCartStore((state) => state.itemCount());
-  
-  // function to handleCheckout() 
+export default function CartSummary() {
+  const total = useCartStore((state) => state.total());
+  const itemCount = useCartStore((state) => state.itemCount());
+  const clearCart = useCartStore((state) => state.clearCart); 
+  const router = useRouter();
 
+  function handleCheckout() {
+    router.push("/checkout/success")
+    console.log ("items, total", itemCount, total)
+    clearCart();
+    console.log("cart clearing")
+  }
 
-  return (
+return (
+  <div>
     <div>
-      <div>
-        <h2>Order summary</h2>
+      <h2>Order summary</h2>
 
-        <div className="">
-          <span>Items</span>
-          <span>{itemCount}</span>
-        </div>
-
-        <div className="">
-          <span>Total</span>
-          <span>{total.toFixed(2)} kr</span>
-        </div>
-
+      <div className="">
+        <span>Items</span>
+        <span>{itemCount}</span>
       </div>
 
-      <button onClick={handleCheckout} className="w-full">
-        Checkout
-      </button>
+      <div className="">
+        <span>Total</span>
+        <span>{total.toFixed(2)} kr</span>
+      </div>
     </div>
-  );
 
+    <button onClick={handleCheckout}  className="w-full">
+      Checkout
+    </button>
+  </div>
+);
+}
