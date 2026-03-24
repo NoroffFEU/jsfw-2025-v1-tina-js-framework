@@ -10,7 +10,7 @@ export default function CartSummary() {
   const router = useRouter();
 
   function handleCheckout() {
-    router.push("/checkout/success")
+    router.push("/cart/checkout/success")
     console.log ("items, total", itemCount, total)
     clearCart();
     console.log("cart clearing")
