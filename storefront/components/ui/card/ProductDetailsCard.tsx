@@ -3,8 +3,7 @@ import Image from "next/image";
 import ReviewSection from "@/components/product/Reviews";
 import TagsSection from "@/components/product/Tags";
 import RatingSection from "@/components/product/Rating";
-
-
+import { CartButton } from "@/components/CartButton";
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
@@ -19,7 +18,7 @@ export default function ProductDetailsCard({ product }: { product: Product }) {
             <CardFooter product={product} />
           </div>
           <div className="pt-2">
-            <AddToCartButton product={product} />
+            <CartButton product={product} />
           </div>
         </div>
 
@@ -83,13 +82,13 @@ export function CardFooter({ product }: { product: Product }) {
   );
 }
 
-export function AddToCartButton({ product }: { product: Product }) {
-  return (
-    <button
-      aria-label={`Add ${product.title} to cart`}
-      className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-none w-full"
-    >
-      Add to Cart
-    </button>
-  );
-}
+// export function AddToCartButton({ product }: { product: Product }) {
+//   return (
+//     <button
+//       aria-label={`Add ${product.title} to cart`}
+//       className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-none w-full"
+//     >
+//       Add to Cart
+//     </button>
+//   );
+// }

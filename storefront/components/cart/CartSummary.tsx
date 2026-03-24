@@ -1,3 +1,6 @@
+"use client"
+
+import { useCartStore } from "@/stores/cartStore";
 //useCartStore
 
 // export default function CartSummary() {
