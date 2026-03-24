@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
-// import { persist } from "zustand/middleware"
+// import { persist } from "zustand/middleware" 
+// save to localstorage so refresh doesnt clear cart
 import { CartItem } from "@/types";
 
 // create the zustand store
@@ -64,13 +65,4 @@ export const useCartStore = create<CartStore>()((set, get) => ({
   itemCount: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
 }));
 
-//   total:
 
-//       addItem:
-//   removeItem:
-// //
-
-//   useCartStore
-//   set state
-
-// export const useCartStore
