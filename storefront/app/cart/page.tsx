@@ -9,10 +9,11 @@ export default function CartPage() {
     
 const items = useCartStore((state) => state.items);
     return (
-      <div className="">
-        <h1 className="text-2xl font-bold">CART CHECK OUT</h1>
-        <CartSummary /> 
-        {items.map((item)=>
+      <div className="m-12">
+        <h1 className="text-2xl text-black-800 font-bold mb-6 ">My Cart</h1>
+         {items.map((item)=>
         <CartItemHandler key={item.id} item={item} />)}
+        <CartSummary /> 
+        
       </div>
     )}
