@@ -10,6 +10,9 @@ interface CartItemProp {
 export default function CartItemHandler({ item }: CartItemProp) {
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
+
+
+
   return (
     <div className="flex items-center gap-4 py-4 p-8 bg-indigo-100 mb-6">
       <div className="flex flex-1 flex-col gap-1">
