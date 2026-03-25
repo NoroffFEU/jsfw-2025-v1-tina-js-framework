@@ -31,8 +31,9 @@ export default function Header() {
           </Link>
           <Link
             href="/cart"
-            className=" relative text-m font-semibold text-indigo-600 hover:text-indigo-700 "
+            className="text-m font-semibold text-indigo-600 hover:text-indigo-700 "
           >
+            <div className=" relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -40,6 +41,7 @@ export default function Header() {
               strokeWidth="1.5"
               stroke="currentColor"
               className="size-6"
+              
             >
               <path
                 strokeLinecap="round"
@@ -51,7 +53,7 @@ export default function Header() {
               <span className="absolute bottom-2 left-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs rounded-sm h-5 w-5 flex items-center justify-center">
                 {itemCount}
               </span>
-            )}
+            )}</div>
           </Link>
         </nav>
       </div>
