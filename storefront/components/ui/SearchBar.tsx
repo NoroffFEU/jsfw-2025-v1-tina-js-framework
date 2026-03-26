@@ -42,7 +42,7 @@ export function SearchBar({ products }: { products: Product[] }) {
   return (
     <div ref={ref} className="relative w-full max-w-md">
       <input
-        className="border"
+        className="bg-white text-indigo-900 border p-2 w-full"
         type="text"
         placeholder="Search products..."
         value={query}
@@ -50,7 +50,7 @@ export function SearchBar({ products }: { products: Product[] }) {
       />
 
       {showDropdown && (
-        <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-auto rounded-md border bg-background shadow-lg">
+        <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-auto  border bg-white shadow-lg ">
           {results.map((product) => (
             <li key={product.id}>
               <Link
