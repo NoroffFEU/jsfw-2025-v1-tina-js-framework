@@ -1,5 +1,3 @@
-
-//link to product id
 import Image from "next/image";
 import { Product} from "@/schemas/productSchema";
 import Link from "next/link";
@@ -27,20 +25,20 @@ export function Card({ product }: { product: Product }) {
         />
 
         {hasDiscount && (
-          <div className="absolute top-0 left-0 bg-indigo-200 text-indigo-800 px-2 py-1 m-2  text-sm font-medium">
+          <div className="absolute top-0 left-0 bg-indigo-200 text-indigo-800 px-2 py-1 m-2  text-sm font-medium font-heading">
             -{discountPercent}%
           </div>
         )}
       </div>
 
       <div className="p-4">
-        <h3 className="text-lg font-medium mb-2">{product.title}</h3>
+        <h3 className="font-heading text-lg font-medium mb-2">{product.title}</h3>
 
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="font-body text-gray-600 text-sm mb-4 line-clamp-2">
           {product.description}
         </p>
 
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center font-heading">
           {hasDiscount ? (
             <>
               <span className="font-light text-md line-through text-indigo-300">
@@ -57,17 +55,6 @@ export function Card({ product }: { product: Product }) {
           )}
           
         </div>
-
-        {/* <div className="mt-4">
-          <Link href={`/product/${product.id}`}>
-          <button
-            aria-label={`View ${product.title} in details page`}
-            className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded w-full"
-          > 
-            View Product
-          </button>
-          </Link>
-        </div> */}
       </div>
       </Link>
     </div>

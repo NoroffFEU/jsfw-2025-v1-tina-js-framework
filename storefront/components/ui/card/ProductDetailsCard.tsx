@@ -7,7 +7,7 @@ import { CartButton } from "@/components/CartButton";
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-8 font-body">
       <div className="bg-indigo-200 grid md:grid-cols-2 gap-8 md:p-12 sm:p-6">
         <div className="overflow-hidden">
           <CardHeader product={product} />
@@ -58,9 +58,9 @@ export function CardHeader({ product }: { product: Product }) {
 export function CardMain({ product }: { product: Product }) {
   return (
     <div className="space-y-6">
-      <h2 className="font-bold text-3xl">{product.title}</h2>
+      <h2 className="font-heading font-bold text-3xl">{product.title}</h2>
       <RatingSection rating={product.rating} />
-      <p className="text-gray-700 text-base">{product.description}</p>
+      <p className="font-body text-gray-700 text-base">{product.description}</p>
       <TagsSection tags={product.tags} />
     </div>
   );
@@ -70,7 +70,7 @@ export function CardFooter({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
 
   return (
-    <div className="flex ">
+    <div className="flex font-heading">
       {hasDiscount && (
         <div className="flex flex-1 line-through">
           {" "}

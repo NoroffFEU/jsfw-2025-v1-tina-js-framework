@@ -25,12 +25,12 @@ export default function CartPage() {
             />
           </svg>
 
-          <h2 className="text-2xl"> Cart is currently empty!</h2>
-          <p className="text-sm">
+          <h2 className="font-heading text-2xl"> Cart is currently empty!</h2>
+          <p className="font-body text-sm">
             Please check out the product page to add items to your cart.
           </p>
           <div className="py-6">
-            <Link href="shop/" className="underline hover:text-indigo-600 ">
+            <Link href="shop/" className="font-heading underline hover:text-indigo-600 ">
               Back to Store
             </Link>
           </div>
