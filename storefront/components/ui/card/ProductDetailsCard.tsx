@@ -45,7 +45,7 @@ export function CardHeader({ product }: { product: Product }) {
         alt={product.image.alt}
         width={700}
         height={700}
-      />{" "}
+      />
       {hasDiscount && (
         <div className="absolute top-0 left-0 bg-amber-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
           -{discountPercent}%
