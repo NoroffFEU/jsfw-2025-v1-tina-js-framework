@@ -22,6 +22,8 @@ export function Card({ product }: { product: Product }) {
           src={product.image?.url || "/placeholder.jpg"}
           alt={product.image?.alt || product.title}
           fill
+          sizes="(max-width:250px)"
+          loading="eager"
         />
 
         {hasDiscount && (
