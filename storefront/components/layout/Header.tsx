@@ -12,11 +12,11 @@ export default function Header() {
   }, []);
 
   return (
-    <header className=" bg-white border-b border-indigo-200 sticky top-0 z-50">
+    <header className=" bg-white border-b border-indigo-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="text-xl font-bold text-indigo-600 hover:text-indigo-700 "
+          className="font-heading md:text-3xl text-2xl font-bold text-indigo-900 "
         >
           STOREFRONT
         </Link>
@@ -24,19 +24,19 @@ export default function Header() {
         <nav className="flex items-center gap-8">
           <Link
             href="/shop"
-            className="text-m font-semibold text-indigo-600 hover:text-indigo-700 "
+            className="text-sm font-heading font-semibold text-indigo-900 hover:text-indigo-700 transition-transform"
           >
             Shop
           </Link>
           <Link
             href="/contact"
-            className="text-m font-semibold text-indigo-600 hover:text-indigo-700 "
+            className="text-sm font-heading font-semibold text-indigo-900 hover:text-indigo-700 transition-transform"
           >
             Contact
           </Link>
           <Link
             href="/cart"
-            className="text-m font-semibold text-indigo-600 hover:text-indigo-700 "
+            className="text-indigo-900 hover:text-indigo-700 transition-transform"
           >
             <div className=" relative">
               <svg
@@ -54,7 +54,7 @@ export default function Header() {
                 />
               </svg>{" "}
               {isClient && itemCount > 0 && (
-                <span className="absolute bottom-2 left-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs rounded-sm h-5 w-5 flex items-center justify-center">
+                <span className="absolute bottom-2 left-2 bg-indigo-900 text-white text-xs rounded-sm h-5 w-5 flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
