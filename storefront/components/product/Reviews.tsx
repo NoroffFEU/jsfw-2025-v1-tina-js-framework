@@ -12,13 +12,13 @@ export default function ReviewSection({ reviews }: { reviews: Review[] }) {
   }
 
   return (
-    <div className="bg-indigo-50 border-indigo-100  md:p-12 sm:p-6" >
+    <div className="bg-indigo-50 border-indigo-100  p-4 sm:p-6 md:p12" >
       <h2 className="font-heading text-2xl font-bold mb-6 text-indigo-950">Reviews</h2>
       {reviews.map((review) => (
         <div key={review.id}>
           <h3 className="font-heading text-sm font-bold text-indigo-800 mb-1"> {review.username}</h3>
 
-          <p className="text-md text text-indigo-900">{review.description}</p>
+          <p className="text-base text text-indigo-900">{review.description}</p>
         </div>
       ))}
     </div>
