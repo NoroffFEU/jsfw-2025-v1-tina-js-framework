@@ -1,5 +1,5 @@
 "use client";
-
+import { currencyFormatter } from "@/utils/currencyFormatter";
 import { useCartStore } from "@/stores/cartStore";
 import { useRouter } from "next/navigation";
 
@@ -31,7 +31,7 @@ export default function CartSummary() {
         <div className="flex justify-between pt-6 border-t border-indigo-100">
           <span className="font-bold text-indigo-900">Total</span>
 
-          <span className="font-bold text-lg text-indigo-900">{total.toLocaleString()} kr</span>
+          <span className="font-bold text-lg text-indigo-900">{currencyFormatter(total)}</span>
         </div>
       </div>
       <div className="pt-3">
