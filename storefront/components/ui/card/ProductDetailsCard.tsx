@@ -75,17 +75,16 @@ export function CardPrice({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
 
   return (
-    <div className="flex items-baseline gap-3 font-heading">
-      {hasDiscount && (
-        <div className="line-through text-indigo-300 font-light">
-          {" "}
-          {product.price.toFixed(2)}
-        </div>
-      )}
-      <div className="text-2xl font-bold text-indigo-900">
-        {product.discountedPrice.toFixed(2)}
-      </div>
+   <div className="flex items-baseline gap-3 font-heading">
+  <div className="text-2xl font-bold text-indigo-900">
+    {product.discountedPrice.toFixed(2)}
+  </div>
+  {hasDiscount && (
+    <div className="line-through text-indigo-300 font-light">
+      {product.price.toFixed(2)}
     </div>
+  )}
+</div>
   );
 }
 

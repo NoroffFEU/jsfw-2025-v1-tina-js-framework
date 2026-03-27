@@ -31,23 +31,23 @@ export function Card({ product }: { product: Product }) {
           )}
         </div>
 
-        <div className="p-4">
+        <div className="pt-2">
           <h3 className="font-heading text-lg font-medium mb-1 text-indigo-950">
             {product.title}
           </h3>
 
-          <p className="font-body text-gray-500 text-sm mb-4 line-clamp-2">
+          {/* <p className="font-body  text-indigo-800 leading-snug text-sm mb-3 line-clamp-2">
             {product.description}
-          </p>
+          </p> */}
 
           <div className="flex gap-3 items-center font-heading">
             {hasDiscount ? (
               <>
-                <span className="font-light text-sm line-through text-indigo-300">
-                  {product.price}
-                </span>
                 <span className="font-bold text-lg text-indigo-800">
                   {product.discountedPrice}
+                </span>
+                <span className="font-light text-sm line-through text-indigo-300">
+                  {product.price}
                 </span>
               </>
             ) : (

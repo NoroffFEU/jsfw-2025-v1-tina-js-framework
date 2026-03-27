@@ -7,7 +7,7 @@ export default function Contact() {
         Contact us
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3  ">       
+      <div className="grid grid-cols-1 md:grid-cols-3  ">
         <div className="flex flex-col gap-2  pt-6 px-6 sm:pt-12 text-center md:text-left">
           <div>
             <h2 className="font-heading font-semibold text-indigo-900 mb-1">
