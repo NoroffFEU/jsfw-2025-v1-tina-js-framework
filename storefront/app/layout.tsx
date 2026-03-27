@@ -3,8 +3,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import { Fira_Code, Inter } from "next/font/google";
 
+const heading = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
+const body = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body
-        className=" "
-      >
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+      <body className="min-h-screen flex flex-col">
         <Header />
-        <main >{children}</main>
-        
-        <Footer/>
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

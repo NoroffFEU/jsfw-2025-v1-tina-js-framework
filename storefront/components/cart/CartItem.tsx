@@ -11,45 +11,49 @@ export default function CartItemHandler({ item }: CartItemProp) {
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
 
-
-
   return (
-    <div className="flex items-center gap-4 py-4 p-8 bg-indigo-100 mb-6">
-      <div className="flex flex-1 flex-col gap-1">
-        <p className="text-sm">{item.quantity} x {item.title}</p>
-        <p className="text-sm">
+    <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 p-4 sm:p-6  bg-indigo-50 border border-indigo-100 ">
+      <div className="flex flex-1 flex-col gap-1 min-w-0">
+        <p className="text-sm font-body font-bold text-indigo-900 truncate">
+          {item.title}
+        </p>
+        <p className="text-sm font-body text-indigo-900 font-bold">
           {item.discountedPrice.toLocaleString()} kr
         </p>
         {item.discountedPrice < item.price && (
-          <p className="text-xs line-through">
+          <p className="text-xs text-indigo-300 font-light line-through">
             {item.price.toLocaleString()} kr
           </p>
         )}
       </div>
 
-      <div className="flex items-center gap-2 shrink-0">
+      <div className="flex items-center gap-1 shrink-0">
+        <button
+          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+          className="bg-indigo-50 border border-indigo-200 text-indigo-700 font-bold h-8 w-8  hover:bg-indigo-100 hover:border-indigo-300 transition-transform  flex items-center justify-center"
+        >
+          −
+        </button>
+        <span className="w-8 text-center text-sm font-semibold text-indigo-900">
+          {item.quantity}
+        </span>
         <button
           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-          className="bg-indigo-600 text-white text-md font-bold h-8 w-8 border-indigo-900 hover:bg-indigo-900 transition-colors items-center justify-center "
+          className="bg-indigo-50 border border-indigo-200 text-indigo-700 font-bold h-8 w-8  hover:bg-indigo-100 hover:border-indigo-300 transition-transform  flex items-center justify-center"
         >
           +
         </button>
-        <button
-          onClick={() => updateQuantity(item.id, item.quantity - 1)}
-          className="bg-indigo-600 text-white text-md font-bold h-8 w-8 border border-indigo-900 hover:bg-indigo-900 transition-colors items-center justify-center "
-        >
-          -
-        </button>
       </div>
+
       <div className="flex items-center gap-4 shrink-0">
-        <p className="text-sm font-bold w-20 text-right">
+        <p className="text-sm text-indigo-900 font-bold w-20 text-right">
           {(item.discountedPrice * item.quantity).toFixed(2)} kr
         </p>
         <button
           onClick={() => removeItem(item.id)}
-          className="bg-indigo-600 text-white text-sm font-semibold h-8 w-8 border-indigo-900 hover:bg-indigo-900 transition-colors items-center justify-center "
+          className="text-indigo-400 hover:text-indigo-900 text-xs underline  transition-transform "
         >
-          x
+          Remove
         </button>
       </div>
     </div>

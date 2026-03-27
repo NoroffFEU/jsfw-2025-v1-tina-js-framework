@@ -17,7 +17,7 @@ export function CartButton({ product }: { product: Product }) {
         quantity: 1,
       })}
       aria-label={`Add ${product.title} to cart`}
-      className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-none w-full"
+      className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 rounded-none w-full"
     >
       Add to Cart
     </button>

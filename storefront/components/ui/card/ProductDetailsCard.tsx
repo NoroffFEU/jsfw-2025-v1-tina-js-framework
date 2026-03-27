@@ -7,25 +7,18 @@ import { CartButton } from "@/components/CartButton";
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="bg-indigo-200 grid md:grid-cols-2 gap-8 md:p-12 sm:p-6">
-        <div className="overflow-hidden">
+    <div className="max-w-6xl mx-auto px-4 py-8 font-body">
+      <div className="bg-indigo-50 border border-indigo-100 grid md:grid-cols-2 gap-8 p-4 sm:p-6 md:p-12">
+        <div className="overflow-hidden relative w-full aspect-square">
           <CardHeader product={product} />
         </div>
         <div className="flex flex-col space-y-6">
           <CardMain product={product} />
-          <div className="">
-            <CardFooter product={product} />
-          </div>
-          <div className="pt-2">
-            <CartButton product={product} />
-          </div>
         </div>
-
       </div>
-        <div className="mt-12">
-          <ReviewSection reviews={product.reviews} />
-        </div>
+      <div className="mt-12">
+        <ReviewSection reviews={product.reviews} />
+      </div>
     </div>
   );
 }
@@ -38,16 +31,16 @@ export function CardHeader({ product }: { product: Product }) {
       )
     : 0;
   return (
-    <div className="relative">
+    <div className="relative w-full h-full">
       <Image
-        className="w-full"
+        className="w-full object-cover h-full"
         src={product.image.url}
         alt={product.image.alt}
-        width={700}
-        height={700}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
       />
       {hasDiscount && (
-        <div className="absolute top-0 left-0 bg-amber-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
+        <div className="absolute top-0 left-0 bg-indigo-100 text-indigo-800 px-2 py-1 m-2 rounded-md text-sm font-medium">
           -{discountPercent}%
         </div>
       )}
@@ -58,27 +51,40 @@ export function CardHeader({ product }: { product: Product }) {
 export function CardMain({ product }: { product: Product }) {
   return (
     <div className="space-y-6">
-      <h2 className="font-bold text-3xl">{product.title}</h2>
-      <RatingSection rating={product.rating} />
-      <p className="text-gray-700 text-base">{product.description}</p>
+      <div className="space-y-2">
+        <h2 className="font-heading font-bold text-indigo-950 text-2xl md:text-3xl">
+          {product.title}
+        </h2>
+        <RatingSection rating={product.rating} />
+      </div>
+
+      <CardPrice product={product} />
+      <CartButton product={product} />
+
+      <hr className="border-indigo-100" />
+
+      <p className="font-body text-base  text-indigo-900 ">
+        {product.description}
+      </p>
       <TagsSection tags={product.tags} />
     </div>
   );
 }
 
-export function CardFooter({ product }: { product: Product }) {
+export function CardPrice({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
 
   return (
-    <div className="flex ">
-      {hasDiscount && (
-        <div className="flex flex-1 line-through">
-          {" "}
-          {product.price.toFixed(2)}
-        </div>
-      )}
-      <div className="flex-6">{product.discountedPrice.toFixed(2)}</div>
+   <div className="flex items-baseline gap-3 font-heading">
+  <div className="text-2xl font-bold text-indigo-900">
+    {product.discountedPrice.toFixed(2)}
+  </div>
+  {hasDiscount && (
+    <div className="line-through text-indigo-300 font-light">
+      {product.price.toFixed(2)}
     </div>
+  )}
+</div>
   );
 }
 

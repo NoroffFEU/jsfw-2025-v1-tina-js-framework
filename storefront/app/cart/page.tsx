@@ -7,7 +7,8 @@ import Link from "next/link";
 export default function CartPage() {
   const items = useCartStore((state) => state.items);
   return (
-    <div className="">
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      {" "}
       {items.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-6 py-18  text-center">
           <svg
@@ -16,7 +17,7 @@ export default function CartPage() {
             viewBox="0 0 24 24"
             strokeWidth="1"
             stroke="currentColor"
-            className="size-20 text-indigo-600"
+            className="size-20 text-indigo-300"
           >
             <path
               strokeLinecap="round"
@@ -25,12 +26,18 @@ export default function CartPage() {
             />
           </svg>
 
-          <h2 className="text-2xl"> Cart is currently empty!</h2>
-          <p className="text-sm">
+          <h2 className="font-heading text-2xl font-bold text-indigo-950">
+            {" "}
+            Cart is currently empty!
+          </h2>
+          <p className="font-body text-sm text-indigo-900">
             Please check out the product page to add items to your cart.
           </p>
           <div className="py-6">
-            <Link href="shop/" className="underline hover:text-indigo-600 ">
+            <Link
+              href="shop/"
+              className="font-heading underline hover:text-indigo-600 "
+            >
               Back to Store
             </Link>
           </div>
@@ -38,10 +45,14 @@ export default function CartPage() {
       ) : (
         <>
           {" "}
-          <h1 className="text-2xl text-black font-bold mb-6 ">My Cart</h1>
-          {items.map((item) => (
-            <CartItemHandler key={item.id} item={item} />
-          ))}
+          <h1 className="text-center text-2xl font-heading text-indigo-950 font-bold mb-6 ">
+            My Cart
+          </h1>
+          <div className="flex flex-col gap-3">
+            {items.map((item) => (
+              <CartItemHandler key={item.id} item={item} />
+            ))}
+          </div>
           <CartSummary />
         </>
       )}
