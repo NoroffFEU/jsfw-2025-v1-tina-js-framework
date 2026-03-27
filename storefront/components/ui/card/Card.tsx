@@ -44,15 +44,15 @@ export function Card({ product }: { product: Product }) {
             {hasDiscount ? (
               <>
                 <span className="font-bold text-lg text-indigo-800">
-                  {product.discountedPrice}
+                  ${product.discountedPrice.toFixed(2)}
                 </span>
                 <span className="font-light text-sm line-through text-indigo-300">
-                  {product.price}
+                  ${product.price.toFixed(2)}
                 </span>
               </>
             ) : (
               <span className="font-bold text-lg text-indigo-800">
-                {product.price}
+                ${product.price.toFixed(2)}
               </span>
             )}
           </div>
