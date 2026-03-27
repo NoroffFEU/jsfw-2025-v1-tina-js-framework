@@ -25,7 +25,7 @@ export function Card({ product }: { product: Product }) {
           />
 
           {hasDiscount && (
-            <div className="absolute top-0 left-0 bg-indigo-100 text-indigo-800 px-2 py-1 m-2 text-sm font-medium font-heading">
+            <div className="absolute top-0 left-0 bg-indigo-50 text-indigo-800 px-2 py-1 m-2 text-sm font-medium font-heading">
               -{discountPercent}%
             </div>
           )}

@@ -4,7 +4,7 @@ export default function ReviewSection({ reviews }: { reviews: Review[] }) {
   if (reviews.length === 0) {
     return (
       <div>
-        <p className=" text-gray-500">
+        <p className="font-body text-indigo-400 text-sm">
           No reviews available for this product yet.
         </p>
       </div>
@@ -12,13 +12,13 @@ export default function ReviewSection({ reviews }: { reviews: Review[] }) {
   }
 
   return (
-    <div className="bg-indigo-200  md:p-12 sm:p-6" >
-      <h2 className="text-2xl font-bold mb-4">Reviews</h2>
+    <div className="bg-indigo-50 border-indigo-100  md:p-12 sm:p-6" >
+      <h2 className="font-heading text-2xl font-bold mb-6 text-indigo-950">Reviews</h2>
       {reviews.map((review) => (
         <div key={review.id}>
-          <h3 className="text-sm"> {review.username}</h3>
+          <h3 className="font-heading text-sm font-bold text-indigo-800 mb-1"> {review.username}</h3>
 
-          <p className="text-l">{review.description}</p>
+          <p className="text-md text text-indigo-900">{review.description}</p>
         </div>
       ))}
     </div>
