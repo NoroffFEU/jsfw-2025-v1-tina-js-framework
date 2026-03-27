@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { ContactSchema, ContactFormInput } from "@/schemas/contactSchema";
-
+import { useRouter } from "next/navigation";
 export default function ContactForm() {
   const {
     register,
@@ -19,11 +19,12 @@ export default function ContactForm() {
       message: "",
     },
   });
+  const router = useRouter()
 
   const onSubmit = async (data: ContactFormInput) => {
     console.log("form submitted:", data);
     reset();
-    alert("you have submitted the contact form");
+    router.push("/contact/success")
   };
 
   return (
@@ -122,13 +123,14 @@ export default function ContactForm() {
               </span>
             )}
           </div>
-          <button
-            className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-            type="submit"
-          >
-            {" "}
-            Submit{" "}
-          </button>
+         
+            <button
+              className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+              type="submit"
+            >
+              Submit Request
+            </button>
+          
         </form>
       </div>
     </div>
