@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Product } from "@/schemas/productSchema";
 import Link from "next/link";
 import RatingSection from "@/components/product/Rating";
+import { currencyFormatter } from "@/utils/currencyFormatter";
 
 export function Card({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
@@ -47,15 +48,15 @@ export function Card({ product }: { product: Product }) {
             {hasDiscount ? (
               <>
                 <span className="font-bold text-lg text-indigo-800">
-                  ${product.discountedPrice.toFixed(2)}
+                 {currencyFormatter(product.discountedPrice)}
                 </span>
                 <span className="font-light text-sm line-through text-indigo-300">
-                  ${product.price.toFixed(2)}
+                   {currencyFormatter(product.price)}
                 </span>
               </>
             ) : (
               <span className="font-bold text-lg text-indigo-800">
-                ${product.price.toFixed(2)}
+               {currencyFormatter(product.price)}
               </span>
             )}
           </div>
