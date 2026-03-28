@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <div className="">
-      <div className="bg-indigo-950 py-28 flex flex-col items-center text-center gap-8">
+      <div className="bg-indigo-950 py-28 px-6 flex flex-col items-center text-center gap-8">
         <h1 className="font-heading text-3xl text-white ">
           Quality products that fits your budget
         </h1>
