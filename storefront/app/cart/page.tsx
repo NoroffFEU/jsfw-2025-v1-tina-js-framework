@@ -26,10 +26,10 @@ export default function CartPage() {
             />
           </svg>
 
-          <h2 className="font-heading text-2xl font-bold text-indigo-950">
+          <h1 className="font-heading text-2xl font-bold text-indigo-950">
             {" "}
             Cart is currently empty!
-          </h2>
+          </h1>
           <p className="font-body text-sm text-indigo-900">
             Please check out the product page to add items to your cart.
           </p>
