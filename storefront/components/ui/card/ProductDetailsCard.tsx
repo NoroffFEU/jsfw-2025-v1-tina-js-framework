@@ -4,6 +4,7 @@ import ReviewSection from "@/components/product/Reviews";
 import TagsSection from "@/components/product/Tags";
 import RatingSection from "@/components/product/Rating";
 import { CartButton } from "@/components/CartButton";
+import { currencyFormatter } from "@/utils/currencyFormatter";
 
 export default function ProductDetailsCard({ product }: { product: Product }) {
   return (
@@ -76,25 +77,14 @@ export function CardPrice({ product }: { product: Product }) {
 
   return (
    <div className="flex items-baseline gap-3 font-heading">
-  <div className="text-2xl font-bold text-indigo-900">
-    {product.discountedPrice.toFixed(2)}
-  </div>
+  <p className="text-2xl font-bold text-indigo-900">
+                 {currencyFormatter(product.discountedPrice)}
+  </p>
   {hasDiscount && (
-    <div className="line-through text-indigo-300 font-light">
-      {product.price.toFixed(2)}
-    </div>
+    <p className="line-through text-indigo-300 font-light">
+               {currencyFormatter(product.price)}
+    </p>
   )}
 </div>
   );
 }
-
-// export function AddToCartButton({ product }: { product: Product }) {
-//   return (
-//     <button
-//       aria-label={`Add ${product.title} to cart`}
-//       className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-none w-full"
-//     >
-//       Add to Cart
-//     </button>
-//   );
-// }
