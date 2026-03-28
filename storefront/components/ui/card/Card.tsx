@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Product } from "@/schemas/productSchema";
 import Link from "next/link";
+import RatingSection from "@/components/product/Rating";
 
 export function Card({ product }: { product: Product }) {
   const hasDiscount = product.discountedPrice < product.price;
@@ -35,6 +36,9 @@ export function Card({ product }: { product: Product }) {
           <h3 className="font-heading text-lg font-medium mb-1 text-indigo-950">
             {product.title}
           </h3>
+
+                  <RatingSection rating={product.rating} />
+          
 
           {/* <p className="font-body  text-indigo-800 leading-snug text-sm mb-3 line-clamp-2">
             {product.description}
