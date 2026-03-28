@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function CheckoutSuccessPage() {
   return (
-    <div className="flex flex-col items-center justify-center gap-6max-w-3xl mx-auto px-4 py-12 text-center">
+    <div className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto px-4 py-12 text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
