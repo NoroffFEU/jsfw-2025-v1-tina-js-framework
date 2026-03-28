@@ -9,7 +9,8 @@ export function SearchBar({ products }: { products: Product[] }) {
   const [results, setResults] = useState<Product[]>([]);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Debounced search, used claude. not right because setResult is called synchronously. Need to find a fix
+    // Used claude to research. setResult is the method i went for
+
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);

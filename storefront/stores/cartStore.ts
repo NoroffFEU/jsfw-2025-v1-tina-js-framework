@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-
 // cartstorage
 // import { persist } from "zustand/middleware" 
 // save to localstorage so refresh doesnt clear cart

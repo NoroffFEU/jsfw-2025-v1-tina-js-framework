@@ -29,7 +29,9 @@ export async function getProducts() {
 }
 
 export async function getProduct(id:string) {
-  const response = await fetch(`${API_URL}/online-shop/${id}`);
+  const response = await fetch(`${API_URL}/online-shop/${id}`, {
+    next: { revalidate: 240 },
+  });
    if (!response.ok) {
     throw new Error(`Failed to fetch products: ${response.statusText}`);
   }

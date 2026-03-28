@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useCartStore } from "@/stores/cartStore";
 import { useState, useEffect } from "react";
 
+// ESlinter gives a warning on setIsClient, but I mean that this is the way i need to do it
+// Used claude to research this and the searchbar useEffect
+
 export default function Header() {
   const [isClient, setIsClient] = useState(false);
   const itemCount = useCartStore((state) => state.itemCount());

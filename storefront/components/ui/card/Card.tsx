@@ -37,8 +37,7 @@ export function Card({ product }: { product: Product }) {
             {product.title}
           </h3>
 
-                  <RatingSection rating={product.rating} />
-          
+          <RatingSection rating={product.rating} />
 
           {/* <p className="font-body  text-indigo-800 leading-snug text-sm mb-3 line-clamp-2">
             {product.description}

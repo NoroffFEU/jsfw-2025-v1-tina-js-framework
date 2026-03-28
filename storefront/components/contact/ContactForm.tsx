@@ -37,7 +37,6 @@ export default function ContactForm() {
           {/* name */}
           <div className="flex flex-col gap-1.5">
             <label htmlFor="name" className="text-sm text-indigo-900">
-              {" "}
               Name:
             </label>
             <input
@@ -47,13 +46,13 @@ export default function ContactForm() {
               type="text"
               name="name"
               required
-            />
-          </div>
-          {errors.name && (
+            />{errors.name && (
             <span className="text-xs text-amber-500 font-medium">
               {errors.name.message}
-            </span>
-          )}
+            </span>)}
+          </div>
+          
+          
           {/* subject */}
           <div className="flex flex-col gap-1.5">
             <label
