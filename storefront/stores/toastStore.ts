@@ -10,7 +10,7 @@ export const useToastStore = create<ToastStore>((set) => ({
   message: "",
   showToast: (message) => {
     set({ message });
-    setTimeout(() => set({ message: "" }), 5000);
+    setTimeout(() => set({ message: "" }), 4000);
   },
   clearToast: () => set({ message: "" }),
 }));
