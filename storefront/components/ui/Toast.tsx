@@ -7,7 +7,7 @@ export default function Toast() {
   if (!toastMessage) return null;
 
   return (
-    <div className=" fixed top-10 right-10 text-sm bg-indigo-900 text-indigo-50 p-3 z-50 font-body">
+    <div className=" fixed top-10 right-5 sm:right-10 text-sm bg-indigo-900 text-indigo-50 p-3 z-50 font-body">
       {toastMessage}
     </div>
   );
