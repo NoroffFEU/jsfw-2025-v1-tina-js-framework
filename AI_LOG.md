@@ -27,6 +27,8 @@ When working on search functionality, AI helped explain how to use `useEffect` t
 
 For forms, I used React Hook Form in combination with Zod. AI helped me understand how validation works through the resolver and how to maintain type safety across the form, allowing me to implement the solution independently.
 
+AI was used for reading thru my notes, reflections and comments that where written through out the project. I was used to check for spelling errors and to give the written submissions a better structure.
+
 ## Reflection on AI Usage
 
 A valuable aspect of using AI in this project was its ability to explain why certain issues existed, rather than simply providing a solution. It also helped identify version-specific issues and gave a better understanding of the overall flow of things.
