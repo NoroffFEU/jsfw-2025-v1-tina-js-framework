@@ -8,13 +8,13 @@ export default function Toast() {
     if (!toastMessage) return null;
 
     return (
-        <div className=" fixed top-10 right-10 bg-indigo-900 text-indigo-50 font-body">
+        <div className=" fixed top-10 right-10 bg-indigo-900 text-indigo-50 p-3 z-50 font-body">
             {toastMessage}
         </div>
 
     )
 }
 
-//ADD toast to button that triggers when adding to cart
+
 //ADD to remove item in cart
 //
