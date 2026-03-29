@@ -11,7 +11,7 @@ export default function CartSummary() {
 
   function handleCheckout() {
     router.push("/cart/checkout/success");
-    clearCart();
+    setTimeout(() => clearCart(), 500);
   }
 
   return (
