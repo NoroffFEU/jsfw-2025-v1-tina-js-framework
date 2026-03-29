@@ -21,6 +21,8 @@ Another usage was about hydration errors in Next.js when using Zustand's persist
 
 AI was helpful in identifying inconsistencies in import paths and explaining the difference between using relative paths and the `@/` alias in Next.js. Additionally, it clarified warnings related to Tailwind CSS and development environment limitations.
 
+AI provided help for the star rating system by pointing out that linearGradient could be used in the half star
+
 When working on search functionality, AI helped explain how to use `useEffect` together with debouncing to improve performance. Since the product list is fetched once and filtered client-side, the debounce delays filtering on each keystroke, avoiding unnecessary re-renders.
 
 For forms, I used React Hook Form in combination with Zod. AI helped me understand how validation works through the resolver and how to maintain type safety across the form, allowing me to implement the solution independently.
