@@ -1,11 +1,14 @@
 // CREATE A TOAST STORE
+"use client"
 
-export default function Toast {
-    const toastMessage = //use the toast store
-    if !toastMessage return null;
+import { useToastStore } from "@/stores/toastStore";
+
+export default function Toast() {
+    const toastMessage = useToastStore((state) => state.message);
+    if (!toastMessage) return null;
 
     return (
-        <div>
+        <div className=" fixed top-10 right-10 bg-indigo-900 text-indigo-50 font-body">
             {toastMessage}
         </div>
 
