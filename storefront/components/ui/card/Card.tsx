@@ -40,23 +40,19 @@ export function Card({ product }: { product: Product }) {
 
           <RatingSection rating={product.rating} />
 
-          {/* <p className="font-body  text-indigo-800 leading-snug text-sm mb-3 line-clamp-2">
-            {product.description}
-          </p> */}
-
           <div className="flex gap-3 items-center font-heading">
             {hasDiscount ? (
               <>
                 <span className="font-bold text-lg text-indigo-800">
-                 {currencyFormatter(product.discountedPrice)}
+                  {currencyFormatter(product.discountedPrice)}
                 </span>
                 <span className="font-light text-sm line-through text-indigo-300">
-                   {currencyFormatter(product.price)}
+                  {currencyFormatter(product.price)}
                 </span>
               </>
             ) : (
               <span className="font-bold text-lg text-indigo-800">
-               {currencyFormatter(product.price)}
+                {currencyFormatter(product.price)}
               </span>
             )}
           </div>

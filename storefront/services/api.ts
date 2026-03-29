@@ -1,6 +1,8 @@
-import { ProductsResponseSchema, SingleProductResponseSchema } from "@/schemas/productSchema";
+import {
+  ProductsResponseSchema,
+  SingleProductResponseSchema,
+} from "@/schemas/productSchema";
 import { z } from "zod";
-
 
 const API_URL = process.env.NOROFF_API_KEY;
 if (!API_URL) {
@@ -28,11 +30,11 @@ export async function getProducts() {
   return parsed.data.data;
 }
 
-export async function getProduct(id:string) {
+export async function getProduct(id: string) {
   const response = await fetch(`${API_URL}/online-shop/${id}`, {
     next: { revalidate: 240 },
   });
-   if (!response.ok) {
+  if (!response.ok) {
     throw new Error(`Failed to fetch products: ${response.statusText}`);
   }
   const data = await response.json();

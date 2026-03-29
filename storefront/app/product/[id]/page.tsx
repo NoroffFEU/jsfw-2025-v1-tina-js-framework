@@ -1,7 +1,6 @@
 import { getProduct } from "@/services/api";
 import ProductDetailsCard from "@/components/ui/card/ProductDetailsCard";
 
-
 export default async function ProductDetailPage({
   params,
 }: {
@@ -11,11 +10,8 @@ export default async function ProductDetailPage({
   const product = await getProduct(id);
 
   return (
-
     <div className=" space-y-6">
       <ProductDetailsCard product={product} />
-      
     </div>
-   
   );
 }

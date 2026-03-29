@@ -2,7 +2,9 @@ export default function TagsSection({ tags }: { tags: string[] }) {
   if (tags.length === 0) {
     return (
       <div>
-        <p className="text-indigo-400 font-body text-sm">No tags for this product.</p>
+        <p className="text-indigo-400 font-body text-sm">
+          No tags for this product.
+        </p>
       </div>
     );
   }
