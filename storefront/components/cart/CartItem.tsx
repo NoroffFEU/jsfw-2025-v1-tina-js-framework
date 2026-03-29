@@ -3,6 +3,7 @@
 import { useCartStore } from "@/stores/cartStore";
 import { CartItem } from "@/types";
 import { currencyFormatter } from "@/utils/currencyFormatter";
+import { useToastStore } from "@/stores/toastStore";
 
 interface CartItemProp {
   item: CartItem;
@@ -11,7 +12,7 @@ interface CartItemProp {
 export default function CartItemHandler({ item }: CartItemProp) {
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
-
+  const showToast = useToastStore((state) => state.showToast);
   return (
     <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 p-4 sm:p-6  bg-indigo-50 border border-indigo-100 ">
       <div className="flex flex-1 flex-col gap-1 min-w-0">
@@ -48,7 +49,10 @@ export default function CartItemHandler({ item }: CartItemProp) {
 
       <div className="flex items-center gap-4 shrink-0">
         <button
-          onClick={() => removeItem(item.id)}
+          onClick={() => {
+            removeItem(item.id);
+            showToast(`${item.title} removed from cart`);
+          }}
           className="text-indigo-400 hover:text-indigo-900 text-xs underline  transition-transform "
         >
           Remove
