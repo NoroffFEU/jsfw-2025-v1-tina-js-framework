@@ -14,7 +14,9 @@ export default async function Home() {
         <SearchBar products={products} />
       </div>
       <div className="px-12 pt-12 pb-16">
-        <h2 className="font-heading text-xl text-indigo-900 font-bold mb-8">Products on sale</h2>
+        <h2 className="font-heading text-xl text-indigo-900 font-bold mb-8">
+          Products on sale
+        </h2>
         <div className="grid  grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-12">
           {products
             .filter((p) => p.discountedPrice < p.price)

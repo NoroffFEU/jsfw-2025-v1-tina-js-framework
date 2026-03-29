@@ -4,8 +4,8 @@ import RatingSection from "@/components/product/Rating";
 export default function ReviewSection({ reviews }: { reviews: Review[] }) {
   if (reviews.length === 0) {
     return (
-      <div>
-        <p className="font-body text-indigo-400 text-sm">
+      <div className="bg-indigo-50 border border-indigo-100  p-4 sm:p-6 md:p12">
+        <p className="text-base text text-indigo-900">
           No reviews available for this product yet.
         </p>
       </div>
@@ -13,7 +13,7 @@ export default function ReviewSection({ reviews }: { reviews: Review[] }) {
   }
 
   return (
-    <div className="bg-indigo-50 border-indigo-100  p-4 sm:p-6 md:p12">
+    <div className="bg-indigo-50 border border-indigo-100  p-4 sm:p-6 md:p12">
       <h2 className="font-heading text-2xl font-bold mb-6 text-indigo-950">
         Reviews
       </h2>

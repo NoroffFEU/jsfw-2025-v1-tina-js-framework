@@ -19,12 +19,12 @@ export default function ContactForm() {
       message: "",
     },
   });
-  const router = useRouter()
+  const router = useRouter();
 
-  const onSubmit = async (data: ContactFormInput) => {
-    console.log("form submitted:", data);
+  //data was being used for console.log
+  const onSubmit = async (_data: ContactFormInput) => {
     reset();
-    router.push("/contact/success")
+    router.push("/contact/success");
   };
 
   return (
@@ -34,7 +34,6 @@ export default function ContactForm() {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-6 "
         >
-          {/* name */}
           <div className="flex flex-col gap-1.5">
             <label htmlFor="name" className="text-sm text-indigo-900">
               Name:
@@ -46,14 +45,13 @@ export default function ContactForm() {
               type="text"
               name="name"
               required
-            />{errors.name && (
-            <span className="text-xs text-amber-500 font-medium">
-              {errors.name.message}
-            </span>)}
+            />
+            {errors.name && (
+              <span className="text-xs text-amber-500 font-medium">
+                {errors.name.message}
+              </span>
+            )}
           </div>
-          
-          
-          {/* subject */}
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="subject"
@@ -75,13 +73,11 @@ export default function ContactForm() {
               </span>
             )}
           </div>
-          {/* email */}
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="email"
               className=" text-sm text-indigo-900 font-heading"
             >
-              {" "}
               Email:
             </label>
             <input
@@ -99,13 +95,11 @@ export default function ContactForm() {
               </span>
             )}
           </div>
-          {/* message */}{" "}
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="message"
               className="text-sm text-indigo-900 font-heading"
             >
-              {" "}
               Message:
             </label>
             <textarea
@@ -122,14 +116,12 @@ export default function ContactForm() {
               </span>
             )}
           </div>
-         
-            <button
-              className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-              type="submit"
-            >
-              Submit Request
-            </button>
-          
+          <button
+            className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+            type="submit"
+          >
+            Submit Request
+          </button>
         </form>
       </div>
     </div>

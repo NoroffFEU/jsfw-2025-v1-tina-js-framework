@@ -9,8 +9,6 @@ export function SearchBar({ products }: { products: Product[] }) {
   const [results, setResults] = useState<Product[]>([]);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Used claude to research. setResult is the method i went for
-
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
@@ -53,10 +51,7 @@ export function SearchBar({ products }: { products: Product[] }) {
       {showDropdown && (
         <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-auto border bg-white shadow-lg ">
           {results.map((product) => (
-            <li key={product.id}
-          
-            
-           >
+            <li key={product.id}>
               <Link
                 className="block px-3 py-2  text-sm "
                 href={`/product/${product.id}`}

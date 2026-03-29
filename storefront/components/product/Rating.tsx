@@ -56,15 +56,12 @@ export default function RatingSection({ rating }: { rating: number }) {
   return (
     <div>
       <div className="flex items-center gap-1 text-indigo-500">
-        {/* Full star */}
         {Array.from({ length: fullStars }).map((_, i) => (
           <Star key={`full-${i}`} type="full" />
         ))}
-
-        {/* Half star */}
+        
         {hasHalfStar && <Star type="half" />}
 
-        {/* Empty stars */}
         {Array.from({ length: emptyStars }).map((_, i) => (
           <Star key={`empty-${i}`} type="empty" />
         ))}

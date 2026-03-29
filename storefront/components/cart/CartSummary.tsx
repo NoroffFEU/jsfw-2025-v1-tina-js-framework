@@ -11,9 +11,7 @@ export default function CartSummary() {
 
   function handleCheckout() {
     router.push("/cart/checkout/success");
-    console.log("items, total", itemCount, total);
-    clearCart();
-    console.log("cart clearing");
+    setTimeout(() => clearCart(), 500);
   }
 
   return (
@@ -27,17 +25,18 @@ export default function CartSummary() {
           <span>{itemCount}</span>
         </div>
 
-
         <div className="flex justify-between pt-6 border-t border-indigo-100">
           <span className="font-bold text-indigo-900">Total</span>
 
-          <span className="font-bold text-lg text-indigo-900">{currencyFormatter(total)}</span>
+          <span className="font-bold text-lg text-indigo-900">
+            {currencyFormatter(total)}
+          </span>
         </div>
       </div>
       <div className="pt-3">
         <button
           onClick={handleCheckout}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-3 px-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
         >
           Checkout
         </button>

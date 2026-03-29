@@ -30,6 +30,5 @@ export const SingleProductResponseSchema = z.object({
   data: ProductSchema,
 });
 
-
 export type Review = z.infer<typeof ReviewSchema>;
 export type Product = z.infer<typeof ProductSchema>;

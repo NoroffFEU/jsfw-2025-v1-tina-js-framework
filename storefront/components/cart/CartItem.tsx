@@ -19,7 +19,7 @@ export default function CartItemHandler({ item }: CartItemProp) {
           {item.title}
         </p>
         <p className="text-sm font-body text-indigo-900 font-bold">
-           {currencyFormatter(item.discountedPrice * item.quantity)}
+          {currencyFormatter(item.discountedPrice * item.quantity)}
         </p>
         {item.discountedPrice < item.price && (
           <p className="text-xs text-indigo-300 font-light line-through">
@@ -47,9 +47,6 @@ export default function CartItemHandler({ item }: CartItemProp) {
       </div>
 
       <div className="flex items-center gap-4 shrink-0">
-        {/* <p className="text-sm text-indigo-900 font-bold w-20 text-right">
-          {(item.discountedPrice * item.quantity).toFixed(2)} kr
-        </p> */}
         <button
           onClick={() => removeItem(item.id)}
           className="text-indigo-400 hover:text-indigo-900 text-xs underline  transition-transform "
