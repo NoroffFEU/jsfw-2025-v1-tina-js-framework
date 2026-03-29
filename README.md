@@ -1,7 +1,6 @@
 # JSFW 2025 - JavaScript Frameworks Assignment
 
 A Next.js e-commerce storefront.
-
 Hosted by Vercel: https://jsfw-2025-v1-tina-js-framework.vercel.app/
 
 ## Project Structure
@@ -16,6 +15,16 @@ The Next.js application is located in the `/storefront` folder.
 - Zustand 
 - Zod 
 - React Hook Form
+
+## Technology Choices and Reasoning
+
+At the beginning of the project, I considered continuing with Vite and React Router, as this aligned more closely with what we had covered in the curriculum. But I chose to work with Next.js. A factor in this decision was deployment with Vercel, which requires little to no configuration for Next.js projects. I had previously experienced challenges with Netlify and wanted to explore something else. Next.js is also widely used in the industry and frequently appears in job listings, so I thought it would be beneficial to learn, despite a possible steeper learning curve.
+
+For state management, I chose Zustand over Redux Toolkit. Redux is powerful, but it introduces a significant amount of boilerplate. Zustand felt more intuitive and closer to React's built-in state management.
+
+I used Zod together with TypeScript. The assignment required strict typing, and Zod provided a way to define schemas that work both as runtime validators and as a source of TypeScript types. A key insight during development was understanding the difference between Zod schemas and TypeScript types, and how to use `z.infer<typeof Schema>` to keep them in sync.
+
+For styling, I chose Tailwind CSS even though I was aware that it might slow me down compared to using Bootstrap. I have experience with Bootstrap, but feel that it can look generic. Tailwind challenged me to improve my CSS skills, though it made the process more demanding and time consuming.
 
 ## Getting Started
 
@@ -56,6 +65,7 @@ Base URL is set via `NOROFF_API_KEY` in `.env.local`.
  ##API Endpoints
 `GET /online-shop` - Fetch all products
 `GET /online-shop/<id>` - Fetch single product
+
 
 ## Limitations
 
