@@ -2,6 +2,8 @@
 
 A Next.js e-commerce storefront.
 
+Hosted by Vercel: https://jsfw-2025-v1-tina-js-framework.vercel.app/
+
 ## Project Structure
 
 The Next.js application is located in the `/storefront` folder.
